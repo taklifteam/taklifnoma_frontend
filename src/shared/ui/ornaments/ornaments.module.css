@@ -1,0 +1,41 @@
+.scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sway1,
+.sway2,
+.sway3 {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: sway 4s ease-in-out infinite alternate;
+}
+
+.sway2 {
+  animation-duration: 5.5s;
+  animation-delay: -2s;
+}
+
+.sway3 {
+  animation-duration: 3.4s;
+  animation-delay: -1s;
+}
+
+@keyframes sway {
+  from {
+    transform: translateY(-24px) rotate(-3deg);
+  }
+  to {
+    transform: translateY(24px) rotate(3deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sway1,
+  .sway2,
+  .sway3 {
+    animation: none;
+  }
+}

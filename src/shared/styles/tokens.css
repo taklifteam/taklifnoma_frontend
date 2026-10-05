@@ -1,0 +1,48 @@
+/* Dizayn tokenlari — "Sochqi". Komponentlar faqat semantik nomlarni ishlatadi (--primary, --gold ...). */
+:root {
+  /* palitra */
+  --rose-800: #8e2a46;
+  --rose-700: #b23a5a;
+  --rose-100: #f7d9d2;
+  --rose-50: #fff8f6;
+  --gold-700: #b98a2a;
+  --gold-500: #e2b54f;
+  --gold-100: #fff0b8;
+  --petal-500: #d9667e;
+  --petal-100: #fad0d8;
+  --navvot: #fff6e2;
+  --navvot-line: #d9b77a;
+
+  /* vazifa bo'yicha */
+  --primary: var(--rose-700);
+  --primary-hover: var(--rose-800);
+  --on-primary: #ffffff;
+  --gold: var(--gold-500);
+
+  --ink: #3a2630;
+  --ink-muted: #6e5560;
+  --placeholder: #9c8a90;
+  --line: #ecd3d0;
+  --line-soft: #f3e3df;
+  --bg: #fbf2ea;
+  --surface: #ffffff;
+  --surface-field: var(--rose-50);
+  --surface-muted: #fbefec;
+
+  /* holatlar */
+  --error: #a3261b;
+  --error-strong: #8f2117;
+  --error-bg: #fceeec;
+  --error-line: #e5b4ae;
+
+  /* shriftlar */
+  --font-script: 'Great Vibes', 'Segoe Script', cursive;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Manrope', 'Segoe UI', system-ui, sans-serif;
+
+  --radius: 14px;
+  --radius-card: 28px;
+  --control-height: 50px;
+  --focus-ring: 0 0 0 3px rgb(178 58 90 / 0.22);
+  --shadow-card: 0 30px 70px -30px rgb(160 60 80 / 0.4);
+}

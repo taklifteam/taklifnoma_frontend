@@ -1,0 +1,73 @@
+{
+  "brand": "taklifnoma",
+  "lang": {
+    "label": "Til",
+    "uz-Latn": "O‘zb",
+    "uz-Cyrl": "Ўзб",
+    "ru": "Рус"
+  },
+  "common": {
+    "loading": "Yuklanmoqda…"
+  },
+  "auth": {
+    "login": {
+      "title": "Xush kelibsiz",
+      "subtitle": "To‘yingiz quvonchini har bir mehmonga ulashing",
+      "login": "Telefon raqam yoki email",
+      "loginPlaceholder": "+998 90 123 45 67",
+      "password": "Parol",
+      "submit": "Kirish",
+      "noAccount": "Hisobingiz yo‘qmi?",
+      "toRegister": "Ro‘yxatdan o‘ting"
+    },
+    "register": {
+      "title": "Hisob ochish",
+      "subtitle": "Bir daqiqa — keyin birinchi taklifnomangizni yaratasiz.",
+      "fullName": "Ismingiz",
+      "fullNamePlaceholder": "Masalan: Gulruhsor Karimova",
+      "phone": "Telefon raqam",
+      "password": "Parol",
+      "passwordHint": "Kamida 8 belgi",
+      "submit": "Hisob ochish",
+      "haveAccount": "Hisobingiz bormi?",
+      "toLogin": "Kirish"
+    },
+    "showPassword": "Parolni ko‘rsatish",
+    "hidePassword": "Parolni yashirish"
+  },
+  "cabinet": {
+    "greeting": "Assalomu alaykum, {{name}}",
+    "emptyTitle": "Hali taklifnoma yo‘q",
+    "emptyText": "Birinchi taklifnomangizni yarating: andoza tanlang, ismlar va sanani kiriting.",
+    "create": "Taklifnoma yaratish",
+    "soon": "Tez orada",
+    "logout": "Chiqish"
+  },
+  "notFound": {
+    "title": "Sahifa topilmadi",
+    "text": "Havola eskirgan yoki xato yozilgan bo‘lishi mumkin.",
+    "home": "Bosh sahifaga"
+  },
+  "errors": {
+    "required": "Bu maydonni to‘ldiring",
+    "invalid": "Noto‘g‘ri qiymat",
+    "too_short": "Juda qisqa",
+    "too_long": "Juda uzun",
+    "phone": {
+      "invalid": "Telefon raqamni to‘liq kiriting: 90 123 45 67",
+      "phone_taken": "Bu raqam ro‘yxatdan o‘tgan. «Kirish» bo‘limidan foydalaning."
+    },
+    "password": {
+      "too_short": "Parol kamida 8 belgidan iborat bo‘lsin",
+      "too_long": "Parol 128 belgidan oshmasin"
+    },
+    "full_name": {
+      "too_long": "Ism 120 belgidan oshmasin"
+    },
+    "invalid_credentials": "Login yoki parol noto‘g‘ri. Qaytadan urinib ko‘ring.",
+    "user_blocked": "Hisobingiz bloklangan. Administratorga murojaat qiling.",
+    "too_many_requests": "Urinishlar juda ko‘p. Bir daqiqadan keyin qayta urinib ko‘ring.",
+    "network": "Server bilan aloqa yo‘q. Internetni tekshirib, qayta urinib ko‘ring.",
+    "unknown": "Nimadir xato ketdi. Birozdan keyin qayta urinib ko‘ring."
+  }
+}
