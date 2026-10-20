@@ -1,7 +1,7 @@
 import { cn } from '../lib/cn'
 import s from './Logo.module.css'
 
-/** Ichida tilla yurak muhri bo'lgan konvert + "taklifnoma". Konvert rangi — currentColor. */
+/** Ichida tilla yurak muhri bo'lgan konvert + "Taklifnoma". Konvert rangi — currentColor. */
 export function Logo({ className }: { className?: string }) {
   return (
     <span className={cn(s.logo, className)}>
@@ -15,7 +15,7 @@ export function Logo({ className }: { className?: string }) {
           strokeWidth="1.2"
         />
       </svg>
-      <span className={s.word}>taklifnoma</span>
+      <span className={s.word}>Taklifnoma</span>
     </span>
   )
 }
