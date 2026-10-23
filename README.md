@@ -59,7 +59,7 @@ alohida yengil bundle).
 
 - Access token faqat xotirada, refresh token `localStorage` da (`taklifnoma.refresh_token`).
 - Har so'rovga `Authorization: Bearer` o'zi qo'shiladi. 401 kelsa — refresh (bir vaqtda faqat bitta)
-  va so'rov takrorlanadi. Refresh ham rad etilsa — sessiya yopiladi, foydalanuvchi `/kirish` ga.
+  va so'rov takrorlanadi. Refresh ham rad etilsa — sessiya yopiladi, foydalanuvchi `/login` ga.
 - Ilova ochilganda refresh token bo'lsa, sessiya tiklanadi; shu paytda himoyalangan sahifalar kutadi.
 - Chiqishda yoki sessiya tugaganda `endSession()`: "me" `null` bo'ladi (ochiq sahifalar darhol
   yangilanadi) va boshqa keshlangan ma'lumot o'chiriladi.

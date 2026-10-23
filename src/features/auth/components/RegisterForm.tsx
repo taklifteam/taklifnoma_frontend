@@ -83,7 +83,7 @@ export function RegisterForm() {
 
       <p className={s.switch}>
         {t('auth.register.haveAccount')}
-        <Link to="/kirish" className={s.switchLink}>
+        <Link to="/login" className={s.switchLink}>
           {t('auth.register.toLogin')}
         </Link>
       </p>

@@ -17,9 +17,9 @@ export const router = createBrowserRouter([
           {
             element: <AuthLayout />,
             children: [
-              { path: '/kirish', lazy: () => import('@/pages/login/LoginPage').then((m) => ({ Component: m.LoginPage })) },
+              { path: '/login', lazy: () => import('@/pages/login/LoginPage').then((m) => ({ Component: m.LoginPage })) },
               {
-                path: '/royxat',
+                path: '/register',
                 lazy: () => import('@/pages/register/RegisterPage').then((m) => ({ Component: m.RegisterPage })),
               },
             ],

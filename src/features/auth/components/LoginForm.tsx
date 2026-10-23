@@ -64,7 +64,7 @@ export function LoginForm() {
 
       <p className={s.switch}>
         {t('auth.login.noAccount')}
-        <Link to="/royxat" className={s.switchLink}>
+        <Link to="/register" className={s.switchLink}>
           {t('auth.login.toRegister')}
         </Link>
       </p>

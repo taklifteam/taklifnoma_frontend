@@ -3,14 +3,14 @@ import { Navigate, Outlet, useLocation, type Location } from 'react-router'
 import { PageLoader } from '@/shared/ui'
 import { useAuth } from './useAuth'
 
-/** Faqat tizimga kirganlar uchun. Kirmagan bo'lsa — /kirish, qaytish manzili eslab qolinadi. */
+/** Faqat tizimga kirganlar uchun. Kirmagan bo'lsa — /login, qaytish manzili eslab qolinadi. */
 export function RequireAuth() {
   const { t } = useTranslation()
   const auth = useAuth()
   const location = useLocation()
 
   if (auth.status === 'loading') return <PageLoader label={t('common.loading')} />
-  if (auth.status === 'guest') return <Navigate to="/kirish" replace state={{ from: location }} />
+  if (auth.status === 'guest') return <Navigate to="/login" replace state={{ from: location }} />
   return <Outlet />
 }
 

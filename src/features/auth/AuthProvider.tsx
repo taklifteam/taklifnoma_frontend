@@ -14,7 +14,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     let active = true
-    // refresh token ham yaroqsiz bo'lsa — sessiya yopiladi, guard /kirish'ga yuboradi
+    // refresh token ham yaroqsiz bo'lsa — sessiya yopiladi, guard /login'ga yuboradi
     const unsubscribe = session.onExpired(() => endSession(queryClient))
 
     refreshSession()
