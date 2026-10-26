@@ -77,6 +77,8 @@ export function PasswordField({ label, hint, error, showLabel, hideLabel, classN
           className={s.action}
           aria-label={visible ? hideLabel : showLabel}
           aria-pressed={visible}
+          aria-controls={id}
+          disabled={input.disabled}
           onClick={() => setVisible((v) => !v)}
         >
           <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">

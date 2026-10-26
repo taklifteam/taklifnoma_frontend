@@ -12,6 +12,7 @@ export function CabinetLayout() {
 
   return (
     <div className={s.page}>
+      <a className="skipLink" href="#main-content">{t('common.skipToContent')}</a>
       <header className={s.header}>
         <div className={s.bar}>
           <Link to="/" className={s.home}>
@@ -26,7 +27,7 @@ export function CabinetLayout() {
           </div>
         </div>
       </header>
-      <main className={s.main}>
+      <main id="main-content" tabIndex={-1} className={s.main}>
         <Outlet />
       </main>
     </div>

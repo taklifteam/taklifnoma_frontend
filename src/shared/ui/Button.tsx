@@ -32,7 +32,7 @@ export function Button({
     >
       {loading ? <Spinner /> : null}
       <span className={cn(s.label, loading && s.hidden)}>{children}</span>
-      {trailingIcon && !loading ? <span className={s.icon}>{trailingIcon}</span> : null}
+      {trailingIcon ? <span aria-hidden="true" className={cn(s.icon, loading && s.hidden)}>{trailingIcon}</span> : null}
     </button>
   )
 }

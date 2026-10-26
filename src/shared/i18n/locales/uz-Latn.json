@@ -7,7 +7,8 @@
     "ru": "Рус"
   },
   "common": {
-    "loading": "Yuklanmoqda…"
+    "loading": "Yuklanmoqda…",
+    "skipToContent": "Asosiy mazmunga o‘tish"
   },
   "auth": {
     "login": {
@@ -22,7 +23,7 @@
     },
     "register": {
       "title": "Hisob ochish",
-      "subtitle": "Bir daqiqa — keyin birinchi taklifnomangizni yaratasiz.",
+      "subtitle": "Hisobingizni oching — shaxsiy kabinetingiz tayyor bo‘ladi.",
       "fullName": "Ismingiz",
       "fullNamePlaceholder": "Masalan: Gulruhsor Karimova",
       "phone": "Telefon raqam",
@@ -38,7 +39,7 @@
   "cabinet": {
     "greeting": "Assalomu alaykum, {{name}}",
     "emptyTitle": "Hali taklifnoma yo‘q",
-    "emptyText": "Birinchi taklifnomangizni yarating: andoza tanlang, ismlar va sanani kiriting.",
+    "emptyText": "Taklifnoma yaratish imkoniyati tez orada qo‘shiladi. Yaratgan taklifnomalaringiz shu yerda ko‘rinadi.",
     "create": "Taklifnoma yaratish",
     "soon": "Tez orada",
     "logout": "Chiqish"

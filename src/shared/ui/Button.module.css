@@ -5,6 +5,7 @@
   justify-content: center;
   gap: 10px;
   min-height: 44px;
+  max-width: 100%;
   border: 0;
   border-radius: var(--radius);
   font-family: var(--font-body);
@@ -20,8 +21,8 @@
 }
 
 .primary {
-  height: 54px;
-  padding: 0 24px;
+  min-height: 54px;
+  padding: 12px 24px;
   background: var(--primary);
   color: var(--on-primary);
   font-size: 16px;
@@ -69,7 +70,7 @@
 }
 
 .hidden {
-  visibility: hidden;
+  opacity: 0;
 }
 
 .icon {
@@ -79,3 +80,7 @@
 .button > :global(.spinner) {
   position: absolute;
 }
+
+.label { min-width: 0; overflow-wrap: anywhere; }
+.icon { flex: none; }
+.secondary:disabled:not([aria-busy]), .link:disabled:not([aria-busy]) { opacity: 0.55; }

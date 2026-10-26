@@ -39,9 +39,22 @@ beforeEach(() => {
 
 afterEach(() => {
   vi.unstubAllGlobals()
+  vi.unstubAllEnvs()
 })
 
 describe('api client', () => {
+  it.each([
+    [undefined, '/api/auth/login'],
+    ['https://api.example.test/', 'https://api.example.test/api/auth/login'],
+  ])('uses a valid request URL when API origin is %s', async (origin, expected) => {
+    vi.stubEnv('VITE_API_URL', origin)
+    vi.resetModules()
+    const { api: isolatedApi } = await import('./client')
+    fetchMock.mockResolvedValueOnce(json(200, {}))
+    await isolatedApi.post('/api/auth/login', {}, { auth: false })
+    expect(fetchMock.mock.calls[0]?.[0]).toBe(expected)
+  })
+
   it('sends the access token', async () => {
     session.save(tokens(1))
     fetchMock.mockResolvedValueOnce(json(200, { ok: true }))

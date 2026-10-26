@@ -6,7 +6,7 @@ import type { ModelsErrorResponse, ModelsTokenResponse } from './types'
 
 export type TokenResponse = ModelsTokenResponse
 
-const BASE_URL = import.meta.env.VITE_API_URL ?? 'localhost:8000/api'
+const BASE_URL = (import.meta.env.VITE_API_URL ?? '').replace(/\/+$/, '')
 const REFRESH_KEY = 'taklifnoma.refresh_token'
 
 // localStorage xususiy rejimda yoki bloklanganda xato berishi mumkin.

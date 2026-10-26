@@ -16,7 +16,7 @@
 .title {
   font-family: var(--font-script);
   font-weight: 400;
-  font-size: 60px;
+  font-size: clamp(38px, 5vw, 60px);
   line-height: 1.05;
   color: var(--primary);
 }
@@ -50,10 +50,15 @@
 
 @media (max-width: 640px) {
   .title {
-    font-size: 50px;
+    font-size: clamp(36px, 8vw, 50px);
   }
 
   .subtitle {
     font-size: 18px;
   }
+}
+
+:global(html:lang(ru)) .title, :global(html:lang(uz-Cyrl)) .title {
+  font-family: var(--font-display);
+  font-weight: 600;
 }

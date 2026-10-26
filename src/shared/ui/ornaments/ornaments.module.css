@@ -39,3 +39,5 @@
     animation: none;
   }
 }
+
+.scene { pointer-events: none; }

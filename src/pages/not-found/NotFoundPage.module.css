@@ -23,7 +23,7 @@
 .title {
   font-family: var(--font-script);
   font-weight: 400;
-  font-size: 64px;
+  font-size: clamp(38px, 7vw, 64px);
   color: var(--primary);
 }
 
@@ -39,3 +39,6 @@
   font-weight: 600;
   text-underline-offset: 3px;
 }
+
+.content { min-width: 0; }
+:global(html:lang(ru)) .title, :global(html:lang(uz-Cyrl)) .title { font-family: var(--font-display); }
