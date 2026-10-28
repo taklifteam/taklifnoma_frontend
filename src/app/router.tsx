@@ -1,11 +1,11 @@
-import { createBrowserRouter } from 'react-router'
+import { createBrowserRouter, type RouteObject } from 'react-router'
 import { GuestOnly, RequireAuth } from '@/features/auth'
 import { AppLoader } from './AppLoader'
 import { AuthLayout } from './layouts/AuthLayout'
 import { CabinetLayout } from './layouts/CabinetLayout'
 
 // Sahifalar alohida bo'lak (chunk) bo'lib yuklanadi: kirish sahifasi kabinet kodini kutmaydi.
-export const router = createBrowserRouter([
+export const routes: RouteObject[] = [
   {
     // birinchi ochilishda sahifa bo'lagi yuklanguncha
     HydrateFallback: AppLoader,
@@ -32,9 +32,32 @@ export const router = createBrowserRouter([
         children: [
           {
             element: <CabinetLayout />,
-            children: [{ path: '/', lazy: () => import('@/pages/home/HomePage').then((m) => ({ Component: m.HomePage })) }],
+            children: [
+              { path: '/', lazy: () => import('@/pages/home/HomePage').then((m) => ({ Component: m.HomePage })) },
+              {
+                path: '/invitations/new',
+                lazy: () =>
+                  import('@/pages/invitation-new/NewInvitationPage').then((m) => ({ Component: m.NewInvitationPage })),
+              },
+              {
+                path: '/invitations/:id/edit',
+                lazy: () =>
+                  import('@/pages/invitation-edit/EditInvitationPage').then((m) => ({ Component: m.EditInvitationPage })),
+              },
+            ],
           },
         ],
+      },
+      // Mehmonlar va namuna — kirish talab qilinmaydi. /:slug eng oxirida: /login, /register va
+      // /preview statik yo'llar bo'lgani uchun ulardan ustun turadi.
+      {
+        path: '/preview/:templateCode',
+        lazy: () =>
+          import('@/pages/template-preview/TemplatePreviewPage').then((m) => ({ Component: m.TemplatePreviewPage })),
+      },
+      {
+        path: '/:slug',
+        lazy: () => import('@/pages/invitation/InvitationPage').then((m) => ({ Component: m.InvitationPage })),
       },
       {
         path: '*',
@@ -42,4 +65,6 @@ export const router = createBrowserRouter([
       },
     ],
   },
-])
+]
+
+export const router = createBrowserRouter(routes)

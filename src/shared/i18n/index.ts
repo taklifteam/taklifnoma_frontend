@@ -7,6 +7,11 @@ import uzLatn from './locales/uz-Latn.json'
 export const LOCALES = ['uz-Latn', 'uz-Cyrl', 'ru'] as const
 export type Locale = (typeof LOCALES)[number]
 
+/** Backend'dan kelgan til kodi; noma'lum bo'lsa — standart til. */
+export function asLocale(value: string): Locale {
+  return (LOCALES as readonly string[]).includes(value) ? (value as Locale) : 'uz-Latn'
+}
+
 const STORAGE_KEY = 'taklifnoma.locale'
 
 function savedLocale(): Locale {

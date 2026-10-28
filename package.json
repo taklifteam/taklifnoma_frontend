@@ -14,7 +14,7 @@
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "gen:api": "swagger-typescript-api generate --path ../backend/api/docs/swagger.json --output src/shared/api --name types.ts --no-client --extract-request-body"
+    "gen:api": "swagger-typescript-api generate --path ../taklifnoma_backend/api/docs/swagger.json --output src/shared/api --name types.ts --no-client --extract-request-body"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",

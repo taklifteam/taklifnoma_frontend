@@ -1,0 +1,10 @@
+.fallback {
+  min-height: var(--template-min-height, 100dvh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--bg);
+  color: var(--ink-muted);
+  text-align: center;
+}

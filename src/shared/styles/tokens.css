@@ -8,6 +8,7 @@
   --gold-700: #b98a2a;
   --gold-500: #e2b54f;
   --gold-100: #fff0b8;
+  --gold-900: #6b4a07;
   --petal-500: #d9667e;
   --petal-100: #fad0d8;
   --navvot: #fff6e2;
@@ -31,6 +32,8 @@
   --surface-muted: #fbefec;
 
   /* holatlar */
+  --success: #2e6b3f;
+  --success-bg: #e7f3ea;
   --error: #a3261b;
   --error-strong: #8f2117;
   --error-bg: #fceeec;

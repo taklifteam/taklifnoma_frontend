@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import type { ReactNode } from 'react'
 import { AuthProvider } from '@/features/auth'
 import { isApiError } from '@/shared/api'
+import { ToastProvider } from '@/shared/ui'
 
 // 4xx xatolarda qayta urinish ma'nosiz (ruxsat yo'q, topilmadi ...) — faqat tarmoq va 5xx'da.
 function shouldRetry(failureCount: number, error: unknown): boolean {
@@ -19,7 +20,9 @@ const queryClient = new QueryClient({
 export function Providers({ children }: { children: ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
-      <AuthProvider>{children}</AuthProvider>
+      <AuthProvider>
+        <ToastProvider>{children}</ToastProvider>
+      </AuthProvider>
     </QueryClientProvider>
   )
 }

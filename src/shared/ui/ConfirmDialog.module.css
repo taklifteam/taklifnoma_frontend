@@ -1,0 +1,31 @@
+/* qobiq (soya, orqa fon) — Dialog.module.css; tasdiqlash oynasi undan torroq.
+   "dialog" tanlovchisi qobiq klassidan ustun turishi uchun (CSS fayllar tartibiga bog'liq bo'lmasin). */
+dialog.narrow {
+  width: min(460px, calc(100vw - 32px));
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px;
+}
+
+.title {
+  font-size: 26px;
+}
+
+.description {
+  color: var(--ink-muted);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.actions { flex-wrap: wrap; }
+@media (max-width: 480px) { .actions > button { flex: 1 1 100%; } }

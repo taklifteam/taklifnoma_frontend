@@ -1,0 +1,432 @@
+.wizard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  font-size: clamp(28px, 4vw, 36px);
+}
+
+/* qadamlar ko'rsatkichi */
+.steps {
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stepItem {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 3px solid var(--line);
+  color: var(--ink-muted);
+  font-size: 14px;
+}
+
+.stepDone {
+  border-top-color: var(--gold-500);
+}
+
+.stepCurrent {
+  border-top-color: var(--primary);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.stepNumber {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--surface-muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stepCurrent .stepNumber {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.stepName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  /* telefonda faqat joriy qadam nomi */
+  .stepItem:not(.stepCurrent) .stepName {
+    display: none;
+  }
+
+  .stepCurrent {
+    flex-grow: 3;
+  }
+}
+
+/* forma + preview */
+.layout {
+  display: grid;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .layout:not(.layoutWide) {
+    grid-template-columns: minmax(0, 1fr) 380px;
+  }
+}
+
+.form {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 28px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+}
+
+@media (max-width: 640px) {
+  .form {
+    padding: 20px 16px;
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sectionTitle {
+  font-size: 24px;
+}
+
+.note {
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  background: var(--surface-muted);
+  color: var(--ink-muted);
+  font-size: 15px;
+}
+
+.error {
+  color: var(--error);
+  font-size: 14px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+@media (max-width: 640px) {
+  .footer > button {
+    flex: 1 1 100%;
+  }
+
+  .spacer {
+    display: none;
+  }
+}
+
+.side {
+  position: sticky;
+  top: 24px;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .side {
+    display: block;
+  }
+
+  .previewButton {
+    display: none;
+  }
+}
+
+/* telefon ramkasi */
+.phone {
+  width: min(100%, 380px);
+  margin-inline: auto;
+  padding: 10px;
+  border-radius: 40px;
+  background: var(--ink);
+  box-shadow: var(--shadow-card);
+}
+
+.phoneScreen {
+  height: min(720px, 75dvh);
+  overflow-y: auto;
+  border-radius: 30px;
+  background: var(--bg);
+  --template-min-height: 100%;
+  overscroll-behavior: contain;
+}
+
+.phoneScreen > * {
+  min-height: 100%;
+}
+
+.reviewPreview {
+  padding-top: 8px;
+}
+
+/* andoza kartochkalari */
+.templates {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.templateCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  padding: 10px 10px 14px;
+  border: 0;
+  border-radius: 22px;
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1.5px var(--line);
+  text-align: center;
+  cursor: pointer;
+}
+
+.templateCard:hover {
+  box-shadow: inset 0 0 0 1.5px var(--primary);
+}
+
+.templateSelected,
+.templateSelected:hover {
+  box-shadow:
+    inset 0 0 0 2.5px var(--primary),
+    var(--focus-ring);
+}
+
+/* 390×760 namuna 0.46 marta kichraytiriladi */
+.thumb {
+  position: relative;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--bg);
+}
+
+.thumbInner {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 390px;
+  height: 760px;
+  transform: translateX(-50%) scale(0.46);
+  transform-origin: top center;
+  --template-min-height: 760px;
+}
+
+.templateName {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.templateState {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.legend {
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.chip {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1.5px var(--line);
+  cursor: pointer;
+}
+
+.chip input {
+  accent-color: var(--primary);
+}
+
+.chipSelected {
+  box-shadow: inset 0 0 0 2px var(--primary);
+  font-weight: 600;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: minmax(110px, auto) 1fr;
+  gap: 10px 20px;
+  margin: 0;
+}
+
+.summary dt {
+  color: var(--ink-muted);
+  font-size: 14px;
+}
+
+.summary dd {
+  margin: 0;
+  min-width: 0;
+}
+
+@media (max-width: 480px) {
+  .summary {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .summary dd {
+    margin-bottom: 10px;
+  }
+}
+
+/* muvaffaqiyat ekrani */
+.done {
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 40px 28px;
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+
+.doneTitle {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: clamp(36px, 8vw, 52px);
+  color: var(--primary);
+}
+
+:global(html:lang(ru)) .doneTitle,
+:global(html:lang(uz-Cyrl)) .doneTitle {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.doneText {
+  color: var(--ink-muted);
+}
+
+.linkBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.linkInput {
+  width: 100%;
+  height: var(--control-height);
+  padding: 0 16px;
+  border: 1.5px solid var(--control-line);
+  border-radius: var(--radius);
+  background: var(--surface-field);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.doneActions {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.doneActions > * {
+  flex: 1 1 160px;
+}
+
+.linkButton {
+  min-height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  border-radius: var(--radius);
+  box-shadow: inset 0 0 0 1.5px var(--line);
+  color: var(--ink);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.linkButton:hover {
+  box-shadow: inset 0 0 0 1.5px var(--primary);
+}
+
+.back {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.templateRadio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.templateCard:has(.templateRadio:focus-visible) {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}

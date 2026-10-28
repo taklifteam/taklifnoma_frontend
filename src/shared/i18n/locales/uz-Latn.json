@@ -8,7 +8,10 @@
   },
   "common": {
     "loading": "Yuklanmoqda…",
-    "skipToContent": "Asosiy mazmunga o‘tish"
+    "skipToContent": "Asosiy mazmunga o‘tish",
+    "cancel": "Bekor qilish",
+    "close": "Yopish",
+    "retry": "Qayta urinish"
   },
   "auth": {
     "login": {
@@ -37,17 +40,146 @@
     "hidePassword": "Parolni yashirish"
   },
   "cabinet": {
+    "title": "Mening taklifnomalarim",
     "greeting": "Assalomu alaykum, {{name}}",
     "emptyTitle": "Hali taklifnoma yo‘q",
-    "emptyText": "Taklifnoma yaratish imkoniyati tez orada qo‘shiladi. Yaratgan taklifnomalaringiz shu yerda ko‘rinadi.",
+    "emptyText": "Birinchi taklifnomangizni yarating — bir necha daqiqada tayyor bo‘ladi.",
     "create": "Taklifnoma yaratish",
-    "soon": "Tez orada",
-    "logout": "Chiqish"
+    "logout": "Chiqish",
+    "loadError": "Taklifnomalarni yuklab bo‘lmadi.",
+    "eventAt": "{{date}}, {{time}}",
+    "edit": "Tahrirlash",
+    "open": "Ochish",
+    "copy": "Havolani nusxalash",
+    "copied": "Havola nusxalandi",
+    "copyFailed": "Nusxalab bo‘lmadi — havolani qo‘lda belgilab oling",
+    "telegram": "Telegram’da ulashish",
+    "delete": "O‘chirish",
+    "deleteTitle": "Taklifnomani o‘chirish",
+    "deleteText": "«{{title}}» o‘chirilsinmi? Havola ishlamay qoladi va uni qaytarib bo‘lmaydi.",
+    "deleted": "Taklifnoma o‘chirildi",
+    "draftHint": "Qoralama — mehmonlar hali ko‘rmaydi",
+    "lockedHint": "Bu taklifnomani endi tahrirlab bo‘lmaydi"
   },
   "notFound": {
     "title": "Sahifa topilmadi",
     "text": "Havola eskirgan yoki xato yozilgan bo‘lishi mumkin.",
     "home": "Bosh sahifaga"
+  },
+  "invitation": {
+    "open": "Taklifnomani ochish",
+    "envelopeNote": "Sizga taklifnoma keldi",
+    "when": "Bazm vaqti",
+    "where": "Bazm manzili",
+    "dayLine": "{{day}}-{{month}}",
+    "yearLine": "{{year}}-yil",
+    "months": [
+      "yanvar",
+      "fevral",
+      "mart",
+      "aprel",
+      "may",
+      "iyun",
+      "iyul",
+      "avgust",
+      "sentabr",
+      "oktabr",
+      "noyabr",
+      "dekabr"
+    ],
+    "weekdays": [
+      "yakshanba",
+      "dushanba",
+      "seshanba",
+      "chorshanba",
+      "payshanba",
+      "juma",
+      "shanba"
+    ],
+    "countdown": "Bazmgacha qoldi",
+    "days": "kun",
+    "hours": "soat",
+    "minutes": "daqiqa",
+    "map": "Xaritada ochish",
+    "calendar": "Kalendarga qo‘shish",
+    "madeWith": "Taklifnoma orqali yaratildi",
+    "pageTitle": "{{names}} — Taklifnoma",
+    "notFoundTitle": "Taklifnoma topilmadi",
+    "notFoundText": "Havola xato yozilgan yoki taklifnoma muddati tugagan bo‘lishi mumkin.",
+    "unknownTemplate": "Bu taklifnoma dizayni hozircha ochilmadi. Sahifani yangilab ko‘ring.",
+    "loadError": "Taklifnomani yuklab bo‘lmadi. Internetni tekshirib, qayta urinib ko‘ring.",
+    "retry": "Qayta urinish",
+    "sampleBadge": "Namuna",
+    "sampleVenueName": "Navro‘z to‘yxonasi",
+    "sampleVenueAddress": "Toshkent sh., Amir Temur ko‘chasi, 1"
+  },
+  "status": {
+    "draft": "Qoralama",
+    "published": "E’lon qilingan",
+    "expired": "Muddati tugagan",
+    "blocked": "Bloklangan"
+  },
+  "wizard": {
+    "createTitle": "Yangi taklifnoma",
+    "editTitle": "Taklifnomani tahrirlash",
+    "steps": {
+      "template": "Andoza",
+      "texts": "Matnlar",
+      "when": "Sana va joy",
+      "review": "Ko‘rib chiqish"
+    },
+    "stepOf": "{{current}}-qadam, jami {{total}}",
+    "back": "Orqaga",
+    "next": "Davom etish",
+    "preview": "Ko‘rish",
+    "previewTitle": "Taklifnoma ko‘rinishi",
+    "chooseTemplate": "Taklifnoma dizaynini tanlang",
+    "chosen": "Tanlangan",
+    "choose": "Tanlash",
+    "samplePreview": "Namunani ochish",
+    "category": "Tadbir turi",
+    "noTemplates": "Hozircha andozalar yo‘q. Birozdan keyin qayta urinib ko‘ring.",
+    "textsNote": "Maydonlarda namuna matn turibdi — o‘zingiznikiga almashtiring.",
+    "title": "Sarlavha",
+    "titleHint": "Havolani ulashganda ko‘rinadi. Bo‘sh qoldirsangiz: «{{auto}}»",
+    "date": "Sana",
+    "time": "Vaqt",
+    "timeHint": "Toshkent vaqti bilan",
+    "venueName": "To‘yxona yoki joy nomi",
+    "venueAddress": "Manzil",
+    "mapUrl": "Xarita havolasi",
+    "mapUrlHint": "Ixtiyoriy. Yandex yoki Google xaritadan «Ulashish» havolasi",
+    "summary": "Ma’lumotlar",
+    "linkNote": "Havola saqlanganda yaratiladi va keyin o‘zgarmaydi.",
+    "saveDraft": "Qoralama sifatida saqlash",
+    "publish": "Saqlash va e’lon qilish",
+    "save": "Saqlash",
+    "saved": "Taklifnoma saqlandi",
+    "fixErrors": "Ba’zi maydonlarda xato bor — tekshirib chiqing.",
+    "leaveTitle": "Sahifadan chiqasizmi?",
+    "leaveText": "Saqlanmagan o‘zgarishlar yo‘qoladi.",
+    "leave": "Chiqish",
+    "stay": "Qolish",
+    "lockedTitle": "Tahrirlab bo‘lmaydi",
+    "lockedText": "Taklifnoma bloklangan yoki muddati tugagan.",
+    "notFound": "Taklifnoma topilmadi",
+    "toList": "Mening taklifnomalarim",
+    "doneTitle": "Taklifnomangiz tayyor!",
+    "doneText": "Havolani mehmonlaringizga yuboring. U o‘zgarmaydi — matn yoki sanani keyin tahrirlasangiz ham, mehmonlar yangisini ko‘radi.",
+    "link": "Taklifnoma havolasi",
+    "openInvitation": "Taklifnomani ochish"
+  },
+  "templateFields": {
+    "groom": "Kuyovning ismi",
+    "bride": "Kelinning ismi",
+    "hosts": "Taklif qiluvchilar",
+    "greeting_text": "Taklif matni",
+    "quote": "Iqtibos (oyat yoki hikmatli so‘z)",
+    "quote_ref": "Iqtibos manbasi",
+    "closing_text": "Yakuniy so‘z"
+  },
+  "templateFieldHints": {
+    "greeting_text": "{groom} va {bride} o‘rniga ismlar qo‘yiladi"
   },
   "errors": {
     "required": "Bu maydonni to‘ldiring",
@@ -69,6 +201,17 @@
     "user_blocked": "Hisobingiz bloklangan. Administratorga murojaat qiling.",
     "too_many_requests": "Urinishlar juda ko‘p. Bir daqiqadan keyin qayta urinib ko‘ring.",
     "network": "Server bilan aloqa yo‘q. Internetni tekshirib, qayta urinib ko‘ring.",
-    "unknown": "Nimadir xato ketdi. Birozdan keyin qayta urinib ko‘ring."
+    "unknown": "Nimadir xato ketdi. Birozdan keyin qayta urinib ko‘ring.",
+    "past": "Bu sana o‘tib ketgan",
+    "too_far": "Sana 3 yildan uzoq bo‘lmasin",
+    "event_at": {
+      "required": "Sana va vaqtni kiriting"
+    },
+    "map_url": {
+      "invalid": "Havola https:// bilan boshlansin"
+    },
+    "invitation_locked": "Taklifnoma bloklangan yoki muddati tugagan — o‘zgartirib bo‘lmaydi.",
+    "payment_required": "E’lon qilish uchun to‘lov kerak. To‘lov tez orada ulanadi.",
+    "not_found": "Taklifnoma topilmadi."
   }
 }

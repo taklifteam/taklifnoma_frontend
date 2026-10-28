@@ -22,7 +22,7 @@ Backend lokalda ishlab turishi kerak. Brauzer so'rovlari `/api/...` ga ketadi, V
 | `npm run build` | tiplarni tekshiradi va `dist/` ga yig'adi |
 | `npm run lint` | ESLint, qatlamlar orasidagi import qoidalari bilan |
 | `npm test` | Vitest |
-| `npm run gen:api` | `../backend/api/docs/swagger.json` dan `src/shared/api/types.ts` ni qayta yaratadi |
+| `npm run gen:api` | `../taklifnoma_backend/api/docs/swagger.json` dan `src/shared/api/types.ts` ni qayta yaratadi |
 
 Backend'da API o'zgarsa: backend'da `make swag-init`, keyin bu yerda `npm run gen:api`. Mos kelmagan
 joylar `npm run build` da tip xatosi bo'lib chiqadi.
@@ -34,7 +34,9 @@ src/
 ├── app/          router, provider'lar, layout'lar (kirish sahifasi, kabinet)
 ├── pages/        har bir yo'l = bitta sahifa; faqat feature'larni yig'adi
 ├── features/     biznes bo'laklar
-│   └── auth/     login, register, logout, sessiyani tiklash, RequireAuth / GuestOnly
+│   ├── auth/         login, register, logout, sessiyani tiklash, RequireAuth / GuestOnly
+│   └── invitations/  kabinet API'si, yaratish ustasi (wizard/), forma tekshiruvi (draft.ts)
+├── templates/    taklifnoma dizaynlari: registry.ts (renderer_key → komponent), TemplateView, lib/
 ├── shared/
 │   ├── api/      client.ts (so'rov + token yangilash), errors.ts, types.ts (generatsiya)
 │   ├── ui/       Button, maydonlar, Alert, Logo, LanguageSwitcher + ornaments/ (milliy bezaklar)
@@ -44,8 +46,32 @@ src/
 └── test/         Vitest sozlamasi
 ```
 
-Keyin qo'shiladi: `templates/` (taklifnoma andozalari) va `invite/` + `invite.html` (mehmon sahifasi,
-alohida yengil bundle).
+Yo'llar: `/` — mening taklifnomalarim, `/invitations/new`, `/invitations/:id/edit` (kirganlar uchun);
+`/preview/:templateCode` — andoza namunasi, `/:slug` — mehmon sahifasi (kirish shart emas).
+
+Admin panel bilan umumiy (nusxa) fayllar — o'zgartirsangiz, ikkalasida ham yangilang:
+`shared/ui/` dagi Dialog, ConfirmDialog, useModal, toast/, Badge, EmptyState, PageHeader, icons;
+`templates/lib/eventDate.ts` va `features/invitations/draft.ts` (admin'da `shared/lib/eventDate.ts`,
+`features/invitations/draft.ts`), `registry.ts` dagi `fieldOrder` (admin'da `features/invitations/fieldOrder.ts`).
+
+## Yangi andoza qo'shish
+
+Andoza ikki qismdan iborat: bu yerdagi dizayn (React komponent) va admin paneldagi katalog yozuvi
+(nom, narx, tadbir turlari, matn maydonlari sxemasi).
+
+1. `src/templates/<nom>/` — komponent. U `TemplateProps` oladi (`types.ts`): matnlar, sana va vaqt zonasi,
+   joy, til, `mode` (`guest` — mehmon sahifasi, `preview` — kabinet va namuna: tugmalar ishlamaydi).
+   Bo'sh maydon bloki chizilmaydi; matn faqat React orqali chiqadi; sana — `lib/eventDate.ts` bilan.
+2. `src/templates/registry.ts` ga `'<nom>@1': { component, fieldOrder }` qo'shing. `fieldOrder` —
+   formadagi maydonlar tartibi (admin'dagi `fieldOrder.ts` ga ham yozing).
+3. Deploy qiling: dizayn saytda bo'lmasa, katalogdagi andoza "dizayn ochilmadi" deb ko'rinadi.
+4. Admin panel → Andozalar → "Andoza qo'shish" (kod, nom, narx, tadbir turlari). So'ng "Versiyalar" →
+   "Yangi versiya": renderer kaliti `<nom>@1`, kontent sxemasi va namuna matnlar → "E'lon qilish".
+5. "Faollashtirish" — andoza mijozlar katalogida va `/preview/<kod>` da ko'rinadi.
+
+**E'lon qilingan versiya o'zgarmaydi** (bazada trigger). Dizayn yoki maydonlar o'zgarsa — yangi
+komponent kaliti (`<nom>@2`, eskisi registrda qoladi) va yangi versiya. Eski taklifnomalar o'z versiyasida
+qoladi, yangilari joriy versiyani oladi.
 
 ## Qoidalar
 

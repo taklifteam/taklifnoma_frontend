@@ -1,7 +1,7 @@
 // Forma maydonlari: yorliq + input + izoh yoki xato. Xato bo'lsa, input aria-invalid
 // va aria-describedby orqali xato matniga bog'lanadi (ekran o'quvchi uni o'qiydi).
 
-import { useId, useState, type InputHTMLAttributes, type ReactNode, type Ref } from 'react'
+import { useId, useState, type InputHTMLAttributes, type ReactNode, type Ref, type TextareaHTMLAttributes } from 'react'
 import { cn } from '../lib/cn'
 import { formatPhone } from '../lib/phone'
 import s from './fields.module.css'
@@ -49,6 +49,26 @@ export function TextField({ label, hint, error, className, ...input }: FieldBase
   return (
     <Field id={id} label={label} hint={hint} error={error}>
       <input id={id} className={cn(s.input, error && s.invalid, className)} {...a11y(id, { error, hint })} {...input} />
+    </Field>
+  )
+}
+
+type TextAreaProps = Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'id'> & {
+  ref?: Ref<HTMLTextAreaElement>
+}
+
+/** Ko'p qatorli matn (taklif matni, yakuniy so'z). Balandligi matnga qarab o'sadi. */
+export function TextAreaField({ label, hint, error, className, rows = 4, ...textarea }: FieldBaseProps & TextAreaProps) {
+  const id = useId()
+  return (
+    <Field id={id} label={label} hint={hint} error={error}>
+      <textarea
+        id={id}
+        rows={rows}
+        className={cn(s.input, s.textarea, error && s.invalid, className)}
+        {...a11y(id, { error, hint })}
+        {...textarea}
+      />
     </Field>
   )
 }
